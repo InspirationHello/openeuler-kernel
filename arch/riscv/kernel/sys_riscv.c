@@ -155,11 +155,6 @@ static void hwprobe_isa_ext0(struct riscv_hwprobe *pair,
 			pair->value |= RISCV_HWPROBE_EXT_ZBS;
 		else
 			missing |= RISCV_HWPROBE_EXT_ZBS;
-
-		if (riscv_isa_extension_available(isainfo->isa, ZACAS))
-			pair->value |= RISCV_HWPROBE_EXT_ZACAS;
-		else
-			missing |= RISCV_HWPROBE_EXT_ZACAS;
 	}
 
 	/* Now turn off reporting features if any CPU is missing it. */
